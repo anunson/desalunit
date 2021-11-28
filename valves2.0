@@ -49,3 +49,5 @@ while True:
 		print("\n", "Killing", "\n")
 		io.cleanup()
 		exit()
+
+#adjustments testing
