@@ -1,5 +1,6 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 import RPi.GPIO as io
+import time
 
 io.setwarnings(False)
 io.setmode(io.BCM)
@@ -11,6 +12,8 @@ def clear():
 		io.output(setuplib[key],1)
 
 clear()
+
+print(setuplib)
 
 while True:
 	try:
@@ -49,5 +52,3 @@ while True:
 		print("\n", "Killing", "\n")
 		io.cleanup()
 		exit()
-
-#adjustments testing
