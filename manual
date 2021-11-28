@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import RPi.GPIO as io
-import time
+import time #not using it, just here incase it is wanted to be used. maybe in another code. 
 
 io.setwarnings(False)
 io.setmode(io.BCM)
