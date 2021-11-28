@@ -1,0 +1,51 @@
+#! /usr/bin/python3
+import RPi.GPIO as io
+
+io.setwarnings(False)
+io.setmode(io.BCM)
+setuplib = {'recycle':19, 'waste':20, 'product':26, 'adsorb':13, 'desorb':21, 'pump':16}
+
+def clear():
+	for key in setuplib:
+		io.setup(setuplib[key], io.OUT)
+		io.output(setuplib[key],1)
+
+clear()
+
+while True:
+	try:
+		cycle = input("Choose a cycle to start | ")
+		if cycle == 'desorb':
+			clear()
+			io.output(setuplib['waste'],0)
+			io.output(setuplib['pump'],0)
+			io.output(setuplib['desorb'],0)
+			print("\n" " Shunt", "\n")
+
+		if cycle == 'adsorb':
+			clear()
+			io.output(setuplib['product'],0)
+			io.output(setuplib['pump'],0)
+			io.output(setuplib['adsorb'],0)
+			print("\n", "Adsorbing", "\n")
+
+		if cycle == 'recycle':
+			clear()
+			io.output(setuplib['recycle'],0)
+			io.output(setuplib['pump'],0)
+			print("\n", "Recycling", "\n")
+
+		if cycle == "":
+			clear()
+			print("\n", "Standby", "\n")
+
+		if cycle == 'help':
+			print("\n", setuplib, "\n")
+
+		if cycle == "exit":
+			exit()
+			
+	except:
+		print("\n", "Killing", "\n")
+		io.cleanup()
+		exit()
