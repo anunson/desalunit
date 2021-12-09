@@ -2,12 +2,10 @@
 import RPi.GPIO as io
 import time #not using it, just here incase it is wanted to be used. maybe in another code. 
 
-
 io.setwarnings(False)
 io.setmode(io.BCM)
 setuplib = {'recycle':19, 'waste':20, 'product':26, 'adsorb':13, 'desorb':21, 'pump':16}
 #assigning cycle to the GPIO pins
-
 
 def help():
     str = "help"
