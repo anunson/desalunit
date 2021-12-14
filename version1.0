@@ -57,7 +57,4 @@ while True:
 		io.cleanup()
 		exit()
 
-#being able to adjust and create structure from the terminal
-#using time.sleep in the test 
-#let's go
 
